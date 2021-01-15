@@ -13,7 +13,14 @@ import 'http_config.dart';
 
 main(List<String> args) async {
   Map<String, String> envVars = Platform.environment;
-//  HttpConfig.hostname = '172.21.221.56';
+  if(envVars.containsKey('HOSTNAME')&&envVars['HOSTNAME']=='izuf68g6a94fj37dstoglwz'){
+
+    print("----是--izuf68g6a94fj37dstoglwz");
+  }else{
+    HttpConfig.hostname = '172.21.221.56';
+    print("---不是==izuf68g6a94fj37dstoglwz");
+  }
+//
 //
   print("-----env---$envVars");
   var parser = ArgParser()..addOption('port', abbr: 'p');
