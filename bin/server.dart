@@ -9,15 +9,15 @@ import 'jktestcontrol.dart';
 import 'http_config.dart';
 
 // For Google Cloud Run, set _hostname to '0.0.0.0'.
-//const _hostname = '172.21.221.56';
+const _hostname = '172.21.221.56';
 
 main(List<String> args) async {
   Map<String, String> envVars = Platform.environment;
-  if(envVars.containsKey('HOSTNAME')&&envVars['HOSTNAME']=='izuf68g6a94fj37dstoglwz'){
-
+  if (envVars.containsKey('HOSTNAME') &&
+      envVars['HOSTNAME'] == 'izuf68g6a94fj37dstoglwz') {
     print("----是--izuf68g6a94fj37dstoglwz");
-  }else{
-    HttpConfig.hostname = '172.21.221.56';
+  } else {
+    HttpConfig.hostname = _hostname;
     print("---不是==izuf68g6a94fj37dstoglwz");
   }
 //
@@ -27,7 +27,7 @@ main(List<String> args) async {
   var result = parser.parse(args);
 
   // For Google Cloud Run, we respect the PORT environment variable
-  var portStr = result['port'] ?? Platform.environment['PORT'] ?? '8089';
+  var portStr = result['port'] ?? Platform.environment['PORT'] ?? '8080';
   var port = int.tryParse(portStr);
 
   if (port == null) {
