@@ -5,19 +5,22 @@ import 'package:args/args.dart';
 import 'package:shelf/shelf.dart' as shelf;
 import 'package:shelf/shelf_io.dart' as io;
 
-import '../bin/server_lib.dart';
+import 'jktestcontrol.dart';
+import 'http_config.dart';
 
 // For Google Cloud Run, set _hostname to '0.0.0.0'.
 //const _hostname = '172.21.221.56';
-//const _hostname = '172.19.152.20';
-const _hostname = '106.14.226.59';
 
 main(List<String> args) async {
+  Map<String, String> envVars = Platform.environment;
+//  HttpConfig.hostname = '172.21.221.56';
+//
+  print("-----env---$envVars");
   var parser = ArgParser()..addOption('port', abbr: 'p');
   var result = parser.parse(args);
 
   // For Google Cloud Run, we respect the PORT environment variable
-  var portStr = result['port'] ?? Platform.environment['PORT'] ?? '8085';
+  var portStr = result['port'] ?? Platform.environment['PORT'] ?? '8089';
   var port = int.tryParse(portStr);
 
   if (port == null) {
@@ -31,7 +34,7 @@ main(List<String> args) async {
       .addMiddleware(shelf.logRequests())
       .addHandler(_echoRequest);
 
-  var server = await io.serve(handler, _hostname, port);
+  var server = await io.serve(handler, HttpConfig.hostname, port);
   print('Serving at http://${server.address.host}:${server.port}');
 }
 
