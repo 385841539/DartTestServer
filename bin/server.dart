@@ -5,7 +5,7 @@ import 'package:args/args.dart';
 import 'package:shelf/shelf.dart' as shelf;
 import 'package:shelf/shelf_io.dart' as io;
 
-import 'jktestcontrol.dart';
+import '../bin/server_lib.dart';
 
 // For Google Cloud Run, set _hostname to '0.0.0.0'.
 //const _hostname = '172.21.221.56';

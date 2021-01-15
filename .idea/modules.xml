@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DartTestServe.iml" filepath="$PROJECT_DIR$/DartTestServe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packageServe/packageServe.iml" filepath="$PROJECT_DIR$/packageServe/packageServe.iml" />
     </modules>
   </component>
 </project>
