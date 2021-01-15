@@ -25,7 +25,10 @@ class TestJkControl {
       "name": "小明",
       "age": 42,
       "address": "中国上海",
-      "level": "13"
+      "level": "13",
+      "headImg":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1297681524,1555435528&fm=26&gp=0.jpg",
+      "gender":"male",
+      "isJinka":true
     }
   };
 }
