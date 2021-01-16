@@ -16,10 +16,24 @@ class TestJkControl {
     if ('${request.url}' == 'healthRecords') {
       return json.encode(healthRecords).toString();
     }
+    if ('${request.url}' == 'memberMoneyInfo') {
+      return json.encode(memberMoneyInfo).toString();
+    }
 
 //    return "${request.url}";
     return json.encode(nihao).toString();
   }
+
+  static const Map memberMoneyInfo = {
+    "code": 0,
+    "message": "success",
+    "data": {
+      "title": "健康合金家庭卡",
+      "subTitle": "立即开通健康卡",
+      "money": "¥ 399/年",
+      "linkUrl": "https://www.baidu.com"
+    }
+  };
 
   static const Map userInfo = {
     "code": 0,
@@ -65,7 +79,8 @@ class TestJkControl {
           "bgColor": "FFD9EFFF",
           "gender": "男",
           "healthUrl": "https://www.baidu.com"
-        }, {
+        },
+        {
           "name": "时迁",
           "age": 62,
           "address": "中国上海",
