@@ -18,6 +18,7 @@ main(List<String> args) async {
     print("----是--izuf68g6a94fj37dstoglwz");
   } else {
     HttpConfig.hostname = _hostname;
+    HttpConfig.hostport = '8083';
     print("---不是==izuf68g6a94fj37dstoglwz");
   }
 //
@@ -27,7 +28,7 @@ main(List<String> args) async {
   var result = parser.parse(args);
 
   // For Google Cloud Run, we respect the PORT environment variable
-  var portStr = result['port'] ?? Platform.environment['PORT'] ?? '80';
+  var portStr = result['port'] ?? Platform.environment['PORT'] ??HttpConfig.hostport ;
   var port = int.tryParse(portStr);
 
   if (port == null) {
