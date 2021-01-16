@@ -54,7 +54,7 @@ class TestJkControl {
           "name": "常时蓓",
           "age": 52,
           "address": "中国上海",
-          "bgColor": "FF25324A",
+          "bgColor": "FFE5E2FF",
           "gender": "女",
           "healthUrl": "https://www.baidu.com"
         },
