@@ -3,6 +3,9 @@ import 'dart:convert';
 import 'package:shelf/shelf.dart';
 import 'package:shelf/src/request.dart';
 
+import 'employments.dart';
+import 'medical_service/medical_service.dart';
+
 class TestJkControl {
   static String request(Request request) {
     Map nihao = {"name": "小明"};
@@ -18,6 +21,13 @@ class TestJkControl {
     }
     if ('${request.url}' == 'memberMoneyInfo') {
       return json.encode(memberMoneyInfo).toString();
+    }
+    if ('${request.url}' == 'employee') {
+      return json.encode(employee).toString();
+    }
+
+    if ('${request.url}' == 'mywenzhen') {
+      return json.encode(mywenzhen).toString();
     }
 
 //    return "${request.url}";

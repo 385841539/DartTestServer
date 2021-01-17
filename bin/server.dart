@@ -9,7 +9,9 @@ import 'jktestcontrol.dart';
 import 'http_config.dart';
 
 // For Google Cloud Run, set _hostname to '0.0.0.0'.
-const _hostname = 'localhost';
+//const _hostname = 'localhost';
+//const _hostname = '172.21.220.50';//公司
+const _hostname = '192.168.1.5';//家里
 
 main(List<String> args) async {
   Map<String, String> envVars = Platform.environment;
